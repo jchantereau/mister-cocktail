@@ -1,2 +1,11 @@
 <h1 class="text-center"> Détails pour <%= @cocktail.name %> </h1>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-4 ">
+      <h2><%= @coktail.ingredients %></h2>
+      <p>@doses.description(@cocktail)</p>
+    </div>
+  </div>
+</div>
