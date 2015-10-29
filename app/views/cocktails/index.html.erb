@@ -1,0 +1,14 @@
+<h1 class="text-center"> Liste de Cocktails - On est jeudi - Time to party!</h1>
+
+
+<div class="container">
+ <div class="row">
+   <% @cocktails.each do |cocktail| %>
+   <div class="col-xs-12 col-sm-4">
+     <h2><%= cocktail.name %></h2>
+     <%= link_to "Découvrez le cocktail", cocktail_path(cocktail) %>
+     <%= link_to "Delete", cocktail_path(cocktail), method: :delete, class: "btn btn-danger" %>
+   </div>
+   <% end %>
+ </div>
+</div>
