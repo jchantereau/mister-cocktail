@@ -1,11 +1,18 @@
-<h1 class="text-center"> Détails pour <%= @cocktail.name %> </h1>
-
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-offset-4 ">
-      <h2><%= @coktail.ingredients %></h2>
-      <p>@doses.description(@cocktail)</p>
+    <div class="col-xs-12 col-sm-offset-4">
+    <h1><%= @cocktail.name %></h1>
+
+      <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+          <%= dose.ingredient.name %> - <%= dose.description %>
+          <%= link_to "delete", dose_path(dose), method: :delete,  class: "btn btn-danger"  %>
+        </li>
+      <% end %>
+      </ul>
+      <%= link_to 'Back', cocktails_path %>
+      <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
     </div>
   </div>
 </div>
